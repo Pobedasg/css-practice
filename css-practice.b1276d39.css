@@ -14,7 +14,7 @@ article {
   grid-template-columns: repeat(var(--columns), 200px);
   justify-content: center;
   align-items: center;
-  gap: 40px 30px;
+  gap: 10px;
   padding: 30px 35px;
   display: grid;
 }
@@ -33,9 +33,17 @@ article {
 
 .person {
   text-align: center;
+  border-radius: 15px;
   flex-direction: column;
   align-items: center;
+  min-height: 240px;
+  padding: 10px;
   display: flex;
+}
+
+.person:hover {
+  background-color: #eee;
+  transform: translateY(-5px);
 }
 
 .photo {
@@ -48,6 +56,13 @@ article {
   width: 200px;
   height: 200px;
   margin-bottom: 8px;
+  transition: transform 100s;
+}
+
+.person:hover .person__photo {
+  border-radius: 20%;
+  transition: transform 100s;
+  transform: scale(1.02);
 }
 
 .person__rank {
@@ -67,7 +82,14 @@ article {
 }
 
 .person__extra {
-  display: none;
+  opacity: 0;
+  justify-content: center;
+  gap: 4px;
+  height: 40px;
+  margin-top: 8px;
+  transition: all .3s;
+  display: flex;
+  transform: translateY(10px);
 }
 
 .person__name {
@@ -75,5 +97,25 @@ article {
   margin: 0;
   font-size: 20px;
   font-weight: 700;
+}
+
+.person:hover .person__extra {
+  opacity: 1;
+  color: #000;
+  font-size: 14px;
+  font-weight: 500;
+  transform: translateY(0);
+}
+
+.person__sport:after {
+  content: ", ";
+}
+
+.person__pay:before {
+  content: "$";
+}
+
+.person__pay:after {
+  content: "M";
 }
 /*# sourceMappingURL=css-practice.b1276d39.css.map */
